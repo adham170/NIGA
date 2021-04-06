@@ -143,6 +143,20 @@ bot_id = sudos.token:match("(%d+)")
 token = sudos.token 
 --- start functions ↓ 
 --------------------------------------------------------------------------------------------------------------
+io.popen("mkdir File_Bot") 
+io.popen("cd File_Bot && rm -rf commands.lua.1") 
+io.popen("cd File_Bot && rm -rf commands.lua.2") 
+io.popen("cd File_Bot && rm -rf commands.lua.3") 
+io.popen("cd File_Bot && wget https://raw.githubusercontent.com/adham170/Files_NIGGA/master/File_Bot/commands.lua") 
+t = "\27[35m".."\nAll Files Started : \n____________________\n"..'\27[m'
+i = 0
+for v in io.popen('ls File_Bot'):lines() do
+if v:match(".lua$") then
+i = i + 1
+t = t.."\27[39m"..i.."\27[36m".." - \27[10;32m"..v..",\27[m \n"
+end
+end
+print(t)
 function vardump(value)  
 print(serpent.block(value, {comment=false}))   
 end 
